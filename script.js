@@ -110,7 +110,7 @@ const trackEmployeeData = () => {
 }
 
 // Add event listeners to 'Add Employees' and 'Get Random Employee' button
-addEmployeesBtn.addEventListener('click', () => collectEmployees);
+addEmployeesBtn.addEventListener('click', () => collectEmployees());
 getRandomEmployeeBtn.addEventListener('click', () => getRandomEmployee(employeesArray));
 
 // Display cached data from local storage whenever page reloads
