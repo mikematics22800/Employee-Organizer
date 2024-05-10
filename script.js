@@ -11,17 +11,20 @@ if (cache) {
 
 // Collect employee data, push to employees array, and update cached data
 const collectEmployees = () => {
-  let firstName = '' 
-  let lastName = ''
-  let salary = ''
-  while (firstName === '') {
+  let firstName = null 
+  let lastName = null
+  let salary = null
+  while (!firstName || !isNaN(firstName)) {
     firstName = prompt("Enter first name:");
+    if (!firstName) return; 
   }
-  while (lastName === '') {
+  while (!lastName || !isNaN(lastName)) {
     lastName = prompt("Enter last name:");
+    if (!lastName) return;
   }
-  while (salary === '' || isNaN(salary)) {
+  while (!salary || isNaN(salary)) {
     salary = prompt("Enter salary:");
+    if (!salary) return;
   }
   employeesArray.push({firstName, lastName, salary})
   localStorage.setItem('employees-array', JSON.stringify(employeesArray))
